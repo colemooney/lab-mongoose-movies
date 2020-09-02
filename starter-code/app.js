@@ -9,6 +9,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+const celebrityRoutes = require('./routes/celebrities');
 
 mongoose
   .connect('mongodb://localhost/lab-celebrity', {useNewUrlParser: true, useUnifiedTopology: true})
@@ -53,6 +54,6 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 const index = require('./routes/index');
 app.use('/', index);
-
+app.use('/celebrities', celebrityRoutes);
 
 module.exports = app;

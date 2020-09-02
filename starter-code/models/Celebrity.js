@@ -5,7 +5,7 @@ const celebritySchema = new Schema({
     name: String,
     occupation: String,
     catchPhrase: String,
-    movies: { type: mongoose.Schema.ObjectId, ref: "movie"}
+    movies: { type: mongoose.Schema.Types.ObjectId, ref: "movie"}
 })
 
 const Celebrity = mongoose.model("celebrity", celebritySchema);
